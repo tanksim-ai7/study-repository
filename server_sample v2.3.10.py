@@ -1,7 +1,13 @@
-from flask import Flask, request, jsonify
 import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+
+from flask import Flask, request, jsonify
+
 import torch
 from ultralytics import YOLO
+
+
 
 app = Flask(__name__)
 model = YOLO('yolov8n.pt')
